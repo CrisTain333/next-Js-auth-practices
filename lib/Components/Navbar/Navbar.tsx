@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +61,7 @@ const Navbar = () => {
             >
               Login
             </Link>
+            {/* <button onClick={() => signIn()}>login</button> */}
           </li>
         </ul>
         <div className="lg:hidden">
