@@ -2,6 +2,8 @@ import Layout from "@/lib/Layout/Layout";
 import React from "react";
 
 const Home = () => {
+  console.log(process.env.MONGO_URI);
+
   return (
     <div>
       <Layout>
