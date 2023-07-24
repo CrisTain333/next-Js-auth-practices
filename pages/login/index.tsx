@@ -26,14 +26,17 @@ const Index = () => {
 
   return (
     <div>
-      <div className="flex items-center lg:h-screen lg:w-full">
+      <div className="flex items-center justify-center lg:h-screen lg:w-full">
         <form onSubmit={submitHandler}>
           <div className="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
             <span className="block w-full text-xl uppercase font-bold mb-4">
               Sing In
             </span>
             <div className="mb-4 md:w-full">
-              <label htmlFor="email" className="block text-xs mb-1">
+              <label
+                htmlFor="email"
+                className="block text-xs mb-1"
+              >
                 Email
               </label>
               <input
@@ -47,7 +50,10 @@ const Index = () => {
               />
             </div>
             <div className="mb-6 md:w-full">
-              <label htmlFor="password" className="block text-xs mb-1">
+              <label
+                htmlFor="password"
+                className="block text-xs mb-1"
+              >
                 Password
               </label>
               <input
@@ -56,7 +62,9 @@ const Index = () => {
                 name="password"
                 id="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
                 placeholder="Password"
               />
             </div>
@@ -82,6 +90,19 @@ const Index = () => {
             <p className="text-red-600">{error}</p>
           </div>
         </form>
+
+        <div>
+          <button
+            className="bg-black text-white px-5 py-2"
+            onClick={() =>
+              signIn("github", {
+                callbackUrl: "http://localhost:3000/",
+              })
+            }
+          >
+            Github Login
+          </button>
+        </div>
       </div>
     </div>
   );
